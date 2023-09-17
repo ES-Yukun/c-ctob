@@ -1,3 +1,7 @@
+#include "../ctob.h"
+
+#include <stdio.h>
+
 int	main(void)
 {
 	unsigned short	*res;

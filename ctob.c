@@ -1,7 +1,5 @@
 #include "ctob.h"
 
-#include <stdio.h>
-
 unsigned short	*ctob(unsigned char c)
 {
 	unsigned char	bit;
