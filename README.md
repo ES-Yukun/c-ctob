@@ -1,4 +1,4 @@
-# CtoB
+# Char to Bit, Bit to Char
 This repo is a lib to convert char and bit respectively.
 
 # Exmaple Usage
