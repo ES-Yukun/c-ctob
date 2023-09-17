@@ -1,21 +1,33 @@
 #include "ctob.h"
 
-short	*ctob(char c)
+#include <stdio.h>
+
+unsigned short	*ctob(unsigned char c)
 {
-	unsigned char	uc;
 	unsigned char	bit;
-	short			*res;
+	unsigned short	*res;
 
 	res = calloc(9, sizeof(short));
-	uc = (unsigned char)c;
-	bit = 1 << 7;
+	if (res == NULL)
+		return (NULL);
+	bit = 0b10000000;
 	while (bit != 0)
 	{
-		if (uc & bit)
-			*res++ = '1';
-		else
-			*res++ = '0';
+		if (c & bit)
+			*res = 1;
+		res++;
 		bit >>= 1;
 	}
-	return (res);
+	return (res - 8);
+}
+
+int	main(void)
+{
+	unsigned short	*res;
+	char			c;
+
+	res = ctob('c');
+	c = btoc(res);
+	free(res);
+	printf("%c", c);
 }
