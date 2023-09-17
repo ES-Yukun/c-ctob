@@ -20,14 +20,3 @@ unsigned short	*ctob(unsigned char c)
 	}
 	return (res - 8);
 }
-
-int	main(void)
-{
-	unsigned short	*res;
-	char			c;
-
-	res = ctob('c');
-	c = btoc(res);
-	free(res);
-	printf("%c", c);
-}
